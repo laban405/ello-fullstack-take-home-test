@@ -26,6 +26,7 @@ const ThemeWrapper: React.FC<ThemeWrapperProps> = ({ children }) => {
           mode,
           primary: {
             main: "#5ACCCC",
+            dark: '#335f6e',
             contrastText: "#ffffff",
           },
           secondary: {

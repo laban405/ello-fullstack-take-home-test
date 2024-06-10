@@ -82,7 +82,7 @@ const BookItem: React.FC<BookItemProps> = ({ book, index, onRemoveBook }) => {
         aria-labelledby="remove-book-from-reading-list"
         aria-describedby="remove-book-from-reading-list"
       >
-        <DialogTitle id="remove-book-from-reading-list-title">
+        <DialogTitle id="remove-book-from-reading-list-title" color={'primary.dark'}>
           {`Remove ${book.title} from reading list?`}
         </DialogTitle>
         <DialogContent>

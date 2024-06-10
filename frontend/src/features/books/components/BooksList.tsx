@@ -15,7 +15,7 @@ const BooksList: FunctionComponent<BooksListProps> = ({
   const booksInReadingList = books.filter((book) => book.isInReadingList);
   return (
     <Box sx={{ margin: "auto" }}>
-      <Typography variant="h4" sx={{ mt: 2, fontWeight: 600 }} gutterBottom>
+      <Typography color={'primary.dark'} variant="h4" sx={{ mt: 2, fontWeight: 600 }} gutterBottom>
         Reading List{`(${booksInReadingList.length})`}
       </Typography>
       <Grid container spacing={2}>
