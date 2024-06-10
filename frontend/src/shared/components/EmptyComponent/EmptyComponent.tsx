@@ -1,11 +1,10 @@
 import { Paper, Typography } from "@mui/material";
-import { FunctionComponent } from "react";
 import PlaylistRemoveIcon from "@mui/icons-material/PlaylistRemove";
 export interface EmptyComponentProps {
   message: string;
 }
 
-export const EmptyComponent: FunctionComponent<EmptyComponentProps> = ({
+export const EmptyComponent: React.FC<EmptyComponentProps> = ({
   message,
 }) => {
   return (

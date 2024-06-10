@@ -6,7 +6,6 @@ import { useSnackbarContext } from "@/shared/components/SnackBar/SnackbarContext
 
 const useGetBooks = () => {
   const [booksResults, setBooksResults] = useState<Book[]>([]);
-  const [filteredBooksResults, setFilteredBooksResults] = useState<Book[]>([]);
   const booksResponse = useQuery(GET_BOOKS_DATA);
   const { showSnackbar } = useSnackbarContext();
 
@@ -32,29 +31,16 @@ const useGetBooks = () => {
     showSnackbar(`You have removed ${book.title} from reading list`, "info");
   };
 
-  const filterBooks = (searchTerm: string) => {
-    if (!searchTerm) {
-      setFilteredBooksResults(booksResults);
-    } else {
-      setFilteredBooksResults(
-        booksResults.filter((book: Book) => book.title.includes(searchTerm))
-      );
-    }
-  };
-
   useEffect(() => {
     if (booksResponse?.data?.books) {
-      setFilteredBooksResults(booksResponse.data.books);
       setBooksResults(booksResponse.data.books);
     }
   }, [booksResponse?.data?.books]);
 
   return {
     booksResults,
-    filteredBooksResults,
     removeFromReadingList,
     addToReadingList,
-    filterBooks,
   };
 };
 

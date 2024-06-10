@@ -10,12 +10,8 @@ const BooksPage: FunctionComponent<BooksPageProps> = () => {
   const {
     booksResults,
     removeFromReadingList,
-    filterBooks,
     addToReadingList,
   } = useGetBooks();
-  const handleSearch = (searchTerm: string) => {
-    filterBooks(searchTerm);
-  };
   
   return (
     <>
