@@ -1,10 +1,6 @@
 import { FunctionComponent } from "react";
 import { Book } from "@/modules/books/models/book.model";
-import {
-  Box,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import BookItem from "./BookItem";
 
 export interface BooksListProps {
@@ -16,12 +12,13 @@ const BooksList: FunctionComponent<BooksListProps> = ({
   books,
   onRemoveBook,
 }) => {
+  const booksInReadingList = books.filter((book) => book.isInReadingList);
   return (
-    <Box sx={{ mt: 1.5, width: "100%" }}>
-      <Typography variant="h4" sx={{ fontWeight: 600 }} gutterBottom>
-        Reading List
+    <Box sx={{  margin: "auto" }}>
+      <Typography variant="h4" sx={{mt: 2, fontWeight: 600 }} gutterBottom>
+        Reading List{`(${booksInReadingList.length})`}
       </Typography>
-      <Grid container spacing={2} sx={{ width: "100%" }}>
+      <Grid container spacing={2}>
         {books &&
           books.map((book, index) => {
             if (book.isInReadingList) {
