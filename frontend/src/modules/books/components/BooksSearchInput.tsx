@@ -1,5 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
-import debounce from "@/shared/utils/debounce";
+import { FunctionComponent} from "react";
 import {
   Autocomplete,
   Box,
@@ -12,33 +11,15 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 export interface BooksSearchInputProps {
-  onSearch: (...args: any) => void;
   onAddBook: (...args: any) => void;
-  debounceTime: number;
   options: Record<string, any>[];
 }
 
 export const BooksSearchInput: FunctionComponent<BooksSearchInputProps> = ({
-  onSearch,
   onAddBook,
-  debounceTime = 300,
   options = [],
 }) => {
-  const value = "";
-  const handleSearch = useCallback(
-    debounce((searchTerm) => {
-      onSearch(searchTerm);
-    }, debounceTime),
-    [onSearch]
-  );
-
-  const handleChange = (event: any) => {
-    const searchTerm = event.target.value;
-    handleSearch(searchTerm);
-  };
-
   const theme = useTheme();
-
   return (
     <Autocomplete
       popupIcon={<SearchIcon color="primary" />}
@@ -48,14 +29,12 @@ export const BooksSearchInput: FunctionComponent<BooksSearchInputProps> = ({
       getOptionKey={(option) => `${option.title + option.author}`}
       sx={{
         width: "100%",
-        // minWidth: 400,
         maxWidth: 550,
         margin: "auto",
         "& .MuiAutocomplete-popupIndicator": { transform: "none" },
       }}
-      onInputChange={(event) => handleChange(event)}
       renderInput={(params) => (
-        <TextField {...params} value={value} label="Search book..." />
+        <TextField {...params} label="Search book..." />
       )}
       renderOption={(props, option, { index }, {}) => {
         return (

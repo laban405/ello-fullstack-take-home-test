@@ -20,8 +20,6 @@ const BooksPage: FunctionComponent<BooksPageProps> = () => {
   return (
     <>
       <BooksSearchInput
-        onSearch={handleSearch}
-        debounceTime={300}
         options={booksResults}
         onAddBook={addToReadingList}
       />
