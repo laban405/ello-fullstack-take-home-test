@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { Book } from "@/modules/books/models/book.model";
+import { Book } from "@/features/books/models/book.model";
 import { Box, Grid, Typography } from "@mui/material";
 import BookItem from "./BookItem";
 
@@ -14,8 +14,8 @@ const BooksList: FunctionComponent<BooksListProps> = ({
 }) => {
   const booksInReadingList = books.filter((book) => book.isInReadingList);
   return (
-    <Box sx={{  margin: "auto" }}>
-      <Typography variant="h4" sx={{mt: 2, fontWeight: 600 }} gutterBottom>
+    <Box sx={{ margin: "auto" }}>
+      <Typography variant="h4" sx={{ mt: 2, fontWeight: 600 }} gutterBottom>
         Reading List{`(${booksInReadingList.length})`}
       </Typography>
       <Grid container spacing={2}>

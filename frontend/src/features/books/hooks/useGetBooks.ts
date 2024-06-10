@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
-import GET_BOOKS_DATA from "@/modules/books/queries/books.query";
+import GET_BOOKS_DATA from "@/features/books/queries/books.query";
 import { useEffect, useState } from "react";
-import { Book } from "@/modules/books/models/book.model";
+import { Book } from "@/features/books/models/book.model";
 import { useSnackbarContext } from "@/shared/components/SnackBar/SnackbarContext";
 
 const useGetBooks = () => {

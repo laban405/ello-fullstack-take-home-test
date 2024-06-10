@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
-import useGetBooks from "@/modules/books/hooks/useGetBooks";
-import BooksList from "@/modules/books/components/BooksList";
+import useGetBooks from "@/features/books/hooks/useGetBooks";
+import BooksList from "@/features/books/components/BooksList";
 import EmptyComponent from "@/shared/components/EmptyComponent/EmptyComponent";
-import BooksSearchInput from "@/modules/books/components/BooksSearchInput";
+import BooksSearchInput from "@/features/books/components/BooksSearchInput";
 
 export interface BooksPageProps {}
 
