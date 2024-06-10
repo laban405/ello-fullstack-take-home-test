@@ -53,7 +53,7 @@ const BookItem: React.FC<BookItemProps> = ({ book, index, onRemoveBook }) => {
             {book.title}
           </Typography>
           <Typography sx={{ mb: 0 }} color="text.secondary">
-            {book.author}
+            {`by ${book.author}`}
           </Typography>
         </CardContent>
 
