@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
-import GET_BOOKS_DATA from "../queries/books.query";
+import GET_BOOKS_DATA from "@/modules/books/queries/books.query";
 import { useEffect, useState } from "react";
-import { Book } from "../models/book.model";
-import { useSnackbarContext } from "../../../shared/components/SnackBar/SnackbarContext";
+import { Book } from "@/modules/books/models/book.model";
+import { useSnackbarContext } from "@/shared/components/SnackBar/SnackbarContext";
 
 const useGetBooks = () => {
   const [booksResults, setBooksResults] = useState<Book[]>([]);
@@ -22,8 +22,6 @@ const useGetBooks = () => {
   };
 
   const removeFromReadingList = (book: Book, index: number) => {
-    console.log('index',index);
-    
     const newResults = booksResults.map((book, i) => {
       if (i === index) {
         return { ...book, isInReadingList: false };

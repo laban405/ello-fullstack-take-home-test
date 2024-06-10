@@ -21,7 +21,7 @@ export const EmptyComponent: FunctionComponent<EmptyComponentProps> = ({
         textAlign:'center'
       }}
     >
-      <PlaylistRemoveIcon sx={{ fontSize: 50,marginBottom:5 }}/>
+      <PlaylistRemoveIcon color="primary" sx={{ fontSize: 50,marginBottom:5 }}/>
       <Typography variant="subtitle1" gutterBottom>
         {message}
       </Typography>
