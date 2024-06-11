@@ -9,7 +9,7 @@ const ThemeSwitcher: React.FC = () => {
   const colorMode = React.useContext(ColorModeContext);
   return (
     <IconButton
-      sx={{ ml: 1 }}
+      sx={{ ml: 1,height:48,width:48 }}
       onClick={colorMode.toggleColorMode}
       color="inherit"
     >

@@ -83,3 +83,42 @@ You can use this query to get the list of books to display in your frontend. You
 - Beautiful and responsive UI.
 
 
+### How to start frontend app
+Switch to `frontend` folder
+
+Run the following command to install npm packages
+```bash
+npm install
+```
+After installation of npm packages is done run the followinng command to start the application
+```bash
+npm run dev
+```
+This will start the frontend app on port `5173`
+
+On your browser go to `http://localhost:5173` to view the application
+
+### How to use the frontend app
+The app consists of an autocomplete search input for searching through a list of books fetched from the backend.
+
+You can start typing the book title to filter the results of the books
+
+<img width="961" alt="search input" src="screenshots/searchinput.png">
+
+Click in the add to reading list to add a book to reading list.
+
+<img width="961" alt="search input" src="screenshots/readinglist.png">
+
+To remove a book from reading list simply click remove from reading list. You will be presented with a dialog to confirm removal
+
+<img width="961" alt="search input" src="screenshots/remove.png">
+
+After successful removal a snackbar will be displayed to show the removal was successful
+
+<img width="961" alt="search input" src="screenshots/snackbar.png">
+
+Please note that the reading list is not persisted to long term storage
+
+There is also dark mode to enhance user experience 
+
+<img width="961" alt="search input" src="screenshots/darkmode.png">

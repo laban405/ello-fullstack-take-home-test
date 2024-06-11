@@ -61,7 +61,7 @@ export const BooksSearchInput: FunctionComponent<BooksSearchInputProps> = ({
               <ListItemText
                 sx={{ flex: 1, marginLeft: 1 }}
                 primary={option?.title}
-                secondary={option?.author}
+                secondary={`by ${option?.author}`}
               />
             </Box>
 

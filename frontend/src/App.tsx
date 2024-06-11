@@ -4,31 +4,21 @@ import "@fontsource/mulish/300.css";
 import "@fontsource/mulish/400.css";
 import "@fontsource/mulish/500.css";
 import "@fontsource/mulish/700.css";
-import { Box, Container, CssBaseline } from "@mui/material";
-import ThemeSwitcher from "@/shared/components/ThemeSwitcher/ThemeSwitcher";
-import Logo from "@/shared/components/Logo/Logo";
+import { Container, CssBaseline } from "@mui/material";
+import Header from "@/shared/components/Header/Header";
+import Footer from "@/shared/components/Footer/Footer";
 
 function App() {
   return (
     <>
       <CssBaseline />
-
-     
-        <Container maxWidth="lg">
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginBottom: 2,
-            }}
-          >
-            <Logo />
-          
-            <ThemeSwitcher />
-          </Box>
-          <BooksPage />
+      <Container maxWidth="lg">
+        <Header />
+        <Container sx={{minHeight:'80vh'}}>
+        <BooksPage />
         </Container>
-     
+        <Footer/>
+      </Container>
     </>
   );
 }
